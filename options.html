@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-Hans" ng-app="gitTrendingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Git Trending Options</title>
+    <style>
+    </style>
+    <script src="./angular.min.js"></script>
+  </head>
+  <body>
+    <div class="container" ng-controller="MainCtrl">
+      <h1>options</h1>
+
+      <div class="wrapper" ng-repeat="l in languages track by $index">
+        <span>{{l}}</span>
+        <button class="btn btn-circle" ng-click="removeLanguage($index)">-</button>
+        <hr/>
+      </div>
+      <input type="text" ng-model="current" />
+      <button class="btn btn-circle" ng-click="appendLanguage()">+</button>
+      <button class="btn btn-circle" ng-click="setLangs()">Save</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
